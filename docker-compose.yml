@@ -1,4 +1,4 @@
-version: '3.8'
+# version: '3.8'
 
 services:
   nginx:
@@ -13,6 +13,8 @@ services:
 
   php:
     build: ./docker/php
+    # 一般ユーザーでLaravelを扱えるようにあらかじめ設定を入力。
+    user: "1000:1000"
     volumes:
       - ./src:/var/www/
 
