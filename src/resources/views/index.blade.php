@@ -40,6 +40,22 @@
                         </div>
                     </div>
                 </div>
+                <!-- フォーム内容記述：メール -->
+                <div class="form__group">
+                    <div class="form__group-title">
+                        <span class="form__label--item">メールアドレス</span>
+                        <span class="form__label--required">必須</span>
+                    </div>
+                    <div class="form__group-content">
+                        <div class="form__input--text">
+                        <!-- placeholderは仮置きの内容記述-->
+                        <input type="email" name="email" placeholder="test@example.com" />
+                        </div>
+                        <div class="form__error">
+                        <!-- バリデーション機能を実装したら記述 -->
+                        </div>
+                    </div>
+                </div>
                 <!-- フォーム内容記述：電話 -->
                 <div class="form__group">
                     <div class="form__group-title">
