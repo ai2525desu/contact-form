@@ -12,7 +12,7 @@ class ContactController extends Controller
         return view('index');
     }
     
-    // confirmアクションの追加
+    // confirmアクションの追加：問合せフォームでの送信ボタンのアクション
     public function confirm(Request $request)
     {
         $contact = $request->only(['name', 'email', 'tel', 'content']);
@@ -24,4 +24,10 @@ class ContactController extends Controller
         return view('confirm', compact('contact'));
     }
 
+    // storeアクションの追加：入力内容確認画面での送信ボタンのアクション
+    // storeアクションでは、問合せ入力時に送信された内容をさらにconfirmのformタグから送信された値として受け取る必要があるので、下記の記述になっている。
+    public function store(Request $request)
+    {
+        $contact = $request->only(['name', 'email', 'tel', 'content']);
+    }
 }

@@ -20,3 +20,6 @@ Route::get('/', [ContactController::class, 'index']);
 
 // indexブラウザページにて送信ボタンが押されたときにconfirmアクションが実行されるよう設定
 Route::post('/contacts/confirm', [ContactController::class, 'confirm']);
+
+// confirmアクションによって入力内容確認画面に値が表示されて、さらにその表示された内容を送信するstoreアクションが実行されるように設定
+Route::post('/contacts', [ContactController::class, 'store']);
