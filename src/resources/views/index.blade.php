@@ -23,7 +23,8 @@
             <div class="contact-form__heading">
                 <h2>お問い合わせ</h2>
             </div>
-            <form class="form">
+            <form class="form" action="/contacts/confirm" method="post">
+                @csrf
                 <!-- フォーム内容記述：名前 -->
                 <div class="form__group">
                     <div class="form__group-title">

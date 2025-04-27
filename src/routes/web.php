@@ -17,3 +17,6 @@ use App\Http\Controllers\ContactController;
 
 // indexアクションの呼び出し
 Route::get('/', [ContactController::class, 'index']);
+
+// indexブラウザページにて送信ボタンが押されたときにconfirmアクションが実行されるよう設定
+Route::post('/contacts/confirm', [ContactController::class, 'confirm']);
