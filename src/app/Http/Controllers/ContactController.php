@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 // DBに情報を保存するため、モデルを反映
 use App\Models\Contact;
+// フォームリクエストの反映
+use App\Http\Requests\ContactRequest;
 
 class ContactController extends Controller
 {
@@ -15,7 +17,7 @@ class ContactController extends Controller
     }
     
     // confirmアクションの追加：問合せフォームでの送信ボタンのアクション
-    public function confirm(Request $request)
+    public function confirm(ContactRequest $request)
     {
         $contact = $request->only(['name', 'email', 'tel', 'content']);
         /* 
@@ -28,7 +30,7 @@ class ContactController extends Controller
 
     // storeアクションの追加：入力内容確認画面での送信ボタンのアクション
     // storeアクションでは、問合せ入力時に送信された内容をさらにconfirmのformタグから送信された値として受け取る必要があるので、下記の記述になっている。
-    public function store(Request $request)
+    public function store(ContactRequest $request)
     {
         $contact = $request->only(['name', 'email', 'tel', 'content']);
         // DBに保存処理する記述
