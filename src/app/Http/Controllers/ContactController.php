@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+// DBに情報を保存するため、モデルを反映
+use App\Models\Contact;
 
 class ContactController extends Controller
 {
@@ -29,5 +31,9 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         $contact = $request->only(['name', 'email', 'tel', 'content']);
+        // DBに保存処理する記述
+        Contact::create($contact);
+        // viewの表示先をthanks.blade.phpに
+        return view('thanks');
     }
 }
