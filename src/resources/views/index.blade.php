@@ -14,7 +14,7 @@
         <!-- フォーム内容記述：名前 -->
         <div class="form__group">
             <div class="form__group-title">
-                <span class="form__label--item">お前</span>
+                <span class="form__label--item">お名前</span>
                 <span class="form__label--required">必須</span>
             </div>
             <div class="form__group-content">
